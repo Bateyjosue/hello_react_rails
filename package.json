@@ -41,6 +41,10 @@
   },
   "devDependencies": {
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
-    "react-refresh": "^0.14.0"
+    "react-refresh": "^0.14.0",
+    "stylelint": "13.3.x",
+    "stylelint-config-standard": "20.0.x",
+    "stylelint-csstree-validator": "^2.1.0",
+    "stylelint-scss": "3.17.x"
   }
 }
