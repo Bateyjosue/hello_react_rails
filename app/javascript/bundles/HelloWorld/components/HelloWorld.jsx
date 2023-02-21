@@ -1,26 +1,25 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import style from './HelloWorld.module.css';
+import { Provider, useSelector } from 'react-redux';
+import store from '../../../redux/store';
 
-const HelloWorld = (props) => {
-  const [name, setName] = useState(props.name);
+
+const HelloWorld = () => {
+
+  const greet = useSelector(state => state.greet);
 
   return (
-    <div>
-      <h3>Hello, {name}!</h3>
+    <div className='banner'>
+      <h3>{greet}</h3>
       <hr />
-      <form>
-        <label className={style.bright} htmlFor="name">
-          Say hello to:
-          <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
-        </label>
-      </form>
     </div>
   );
 };
 
-HelloWorld.propTypes = {
-  name: PropTypes.string.isRequired, // this is passed from the Rails view
-};
 
-export default HelloWorld;
+export default () => (
+  <Provider store={store}>
+    <HelloWorld />
+  </Provider>
+);
