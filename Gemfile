@@ -69,3 +69,4 @@ end
 gem "shakapacker", "= 6.5"
 
 gem "react_on_rails", "= 13.3"
+gem 'active_model_serializers'

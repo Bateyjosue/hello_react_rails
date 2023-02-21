@@ -1,14 +1,13 @@
 import axios from 'axios'
 import {createAsyncThunk} from '@reduxjs/toolkit';
 
-const BASE_URL = 'http://127.0.0.1:3000/';
+axios.defaults.baseURL = 'http://127.0.0.1:3000/';
 
 export const getGreeting = createAsyncThunk(
   'GET_GREETING',
   async() => {
-      const response = await axios.get(BASE_URL);
-      console.log(response.data)
-      return response.data
+      const response = await axios.get('/');
+      return response.data.text
     }
 );
 
@@ -18,6 +17,9 @@ const reducerGreet = (state = 'Greetings', action) => {
     default: return state
   }
 }
+
+console.log('Loading...')
+
 
 
 export default reducerGreet;
