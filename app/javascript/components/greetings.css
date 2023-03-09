@@ -1,0 +1,14 @@
+body {
+  background: #228eec;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: white;
+  font-size: 5rem;
+  margin-top: 15rem;
+}
